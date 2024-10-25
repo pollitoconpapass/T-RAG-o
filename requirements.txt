@@ -1,0 +1,6 @@
+openai==1.52.2
+pinecone==5.3.1
+pinecone-client
+python-dotenv==1.0.1
+Requests==2.32.3
+sentence_transformers==2.3.1
