@@ -39,5 +39,5 @@ Achieving translation using a RAG process. Inspired by [this](https://medium.com
 ![alt text](public/image.png)
 
 
-> [!INFO] 
+> [!IMPORTANT] 
 > Please notice that you can change the script to accommodate your own tools and data
