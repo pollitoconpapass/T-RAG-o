@@ -34,6 +34,8 @@ Achieving translation using a RAG process. Inspired by [this](https://medium.com
 
 - Follow the Jupyter Notebook cells and the labels present.
 - `test_translate.py` is the Python script to test the translation alone.
+- `examples/words.json` in case you want to add some special custom words 
+- `examples/ingest_json_2_pinecone.ipynb` the script to add those custom words to the Pinecone index
 
 ## 🌍 Translation Example
 ![alt text](public/image.png)
