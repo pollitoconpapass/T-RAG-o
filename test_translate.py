@@ -47,29 +47,39 @@ def retrieve_similar_sentence(query_sentence):
 def translate_sentence(sentence, source_language="english", target_language="quechua"):
     results = retrieve_similar_sentence(sentence)
 
-    prompt = f""" Your task is to translate text from source_language 
-                {source_language} to target_language {target_language} 
-                using provided context details.
+    prompt = f""" Your task is to translate text from source_language
+            {source_language} to target_language {target_language}
+            using provided context details.
 
-                context:
-                ```
-                source_sentence: {results[0]["source_sentence"]}
-                target_sentence: {results[0]["target_sentence"]}
+            For simple phrases you can translate directly to {target_language}
+            using your own {target_language} knowledge.
 
-                source_sentence: {results[1]["source_sentence"]}
-                target_sentence: {results[1]["target_sentence"]}
+            Take into consideration the following grammatical rules of {target_language}:
 
-                source_sentence: {results[2]["source_sentence"]}
-                target_sentence: {results[2]["target_sentence"]}
+            rules:
+            ```
+            Sentence structure are: 
+            Subject  Object  Verb
+            ```
 
-                source_sentence: {results[3]["source_sentence"]}
-                target_sentence: {results[3]["target_sentence"]}
-                ```
+            context:
+            ```
+            source_sentence: {results[0]["source_sentence"]}
+            target_sentence: {results[0]["target_sentence"]}
 
-                text:
-                ```
-                {sentence}
-                ```
+            source_sentence: {results[1]["source_sentence"]}
+            target_sentence: {results[1]["target_sentence"]}
+
+            source_sentence: {results[2]["source_sentence"]}
+            target_sentence: {results[2]["target_sentence"]}
+            ```
+
+            text:
+            ```
+            {sentence}
+            ```
+
+            Analyze the final answer with your own {target_language} knowledge. And give the best response.
     """
 
     response = client.chat.completions.create(
